@@ -20,7 +20,6 @@ go_library(
         "helpers.go",
         "meta.go",
         "register.go",
-        "types.generated.go",
         "types.go",
         "types_swagger_doc_generated.go",
         "zz_generated.conversion.go",
@@ -45,7 +44,6 @@ go_library(
         "//pkg/watch/versioned:go_default_library",
         "//vendor:github.com/gogo/protobuf/proto",
         "//vendor:github.com/gogo/protobuf/sortkeys",
-        "//vendor:github.com/ugorji/go/codec",
     ],
 )
 

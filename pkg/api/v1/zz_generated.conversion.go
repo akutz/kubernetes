@@ -145,6 +145,8 @@ func RegisterConversions(scheme *runtime.Scheme) error {
 		Convert_api_ISCSIVolumeSource_To_v1_ISCSIVolumeSource,
 		Convert_v1_KeyToPath_To_api_KeyToPath,
 		Convert_api_KeyToPath_To_v1_KeyToPath,
+		Convert_v1_LibStorageVolumeSource_To_api_LibStorageVolumeSource,
+		Convert_api_LibStorageVolumeSource_To_v1_LibStorageVolumeSource,
 		Convert_v1_Lifecycle_To_api_Lifecycle,
 		Convert_api_Lifecycle_To_v1_Lifecycle,
 		Convert_v1_LimitRange_To_api_LimitRange,
@@ -1632,6 +1634,34 @@ func Convert_api_KeyToPath_To_v1_KeyToPath(in *api.KeyToPath, out *KeyToPath, s 
 	return autoConvert_api_KeyToPath_To_v1_KeyToPath(in, out, s)
 }
 
+func autoConvert_v1_LibStorageVolumeSource_To_api_LibStorageVolumeSource(in *LibStorageVolumeSource, out *api.LibStorageVolumeSource, s conversion.Scope) error {
+	out.Host = in.Host
+	out.Service = in.Service
+	out.Options = *(*map[string]string)(unsafe.Pointer(&in.Options))
+	out.VolumeName = in.VolumeName
+	out.FSType = in.FSType
+	out.ReadOnly = in.ReadOnly
+	return nil
+}
+
+func Convert_v1_LibStorageVolumeSource_To_api_LibStorageVolumeSource(in *LibStorageVolumeSource, out *api.LibStorageVolumeSource, s conversion.Scope) error {
+	return autoConvert_v1_LibStorageVolumeSource_To_api_LibStorageVolumeSource(in, out, s)
+}
+
+func autoConvert_api_LibStorageVolumeSource_To_v1_LibStorageVolumeSource(in *api.LibStorageVolumeSource, out *LibStorageVolumeSource, s conversion.Scope) error {
+	out.Host = in.Host
+	out.Service = in.Service
+	out.Options = *(*map[string]string)(unsafe.Pointer(&in.Options))
+	out.VolumeName = in.VolumeName
+	out.FSType = in.FSType
+	out.ReadOnly = in.ReadOnly
+	return nil
+}
+
+func Convert_api_LibStorageVolumeSource_To_v1_LibStorageVolumeSource(in *api.LibStorageVolumeSource, out *LibStorageVolumeSource, s conversion.Scope) error {
+	return autoConvert_api_LibStorageVolumeSource_To_v1_LibStorageVolumeSource(in, out, s)
+}
+
 func autoConvert_v1_Lifecycle_To_api_Lifecycle(in *Lifecycle, out *api.Lifecycle, s conversion.Scope) error {
 	out.PostStart = (*api.Handler)(unsafe.Pointer(in.PostStart))
 	out.PreStop = (*api.Handler)(unsafe.Pointer(in.PreStop))
@@ -2649,6 +2679,7 @@ func autoConvert_v1_PersistentVolumeSource_To_api_PersistentVolumeSource(in *Per
 	out.VsphereVolume = (*api.VsphereVirtualDiskVolumeSource)(unsafe.Pointer(in.VsphereVolume))
 	out.Quobyte = (*api.QuobyteVolumeSource)(unsafe.Pointer(in.Quobyte))
 	out.AzureDisk = (*api.AzureDiskVolumeSource)(unsafe.Pointer(in.AzureDisk))
+	out.LibStorage = (*api.LibStorageVolumeSource)(unsafe.Pointer(in.LibStorage))
 	return nil
 }
 
@@ -2673,6 +2704,7 @@ func autoConvert_api_PersistentVolumeSource_To_v1_PersistentVolumeSource(in *api
 	out.AzureFile = (*AzureFileVolumeSource)(unsafe.Pointer(in.AzureFile))
 	out.VsphereVolume = (*VsphereVirtualDiskVolumeSource)(unsafe.Pointer(in.VsphereVolume))
 	out.AzureDisk = (*AzureDiskVolumeSource)(unsafe.Pointer(in.AzureDisk))
+	out.LibStorage = (*LibStorageVolumeSource)(unsafe.Pointer(in.LibStorage))
 	return nil
 }
 
@@ -4266,6 +4298,7 @@ func autoConvert_v1_VolumeSource_To_api_VolumeSource(in *VolumeSource, out *api.
 	out.VsphereVolume = (*api.VsphereVirtualDiskVolumeSource)(unsafe.Pointer(in.VsphereVolume))
 	out.Quobyte = (*api.QuobyteVolumeSource)(unsafe.Pointer(in.Quobyte))
 	out.AzureDisk = (*api.AzureDiskVolumeSource)(unsafe.Pointer(in.AzureDisk))
+	out.LibStorage = (*api.LibStorageVolumeSource)(unsafe.Pointer(in.LibStorage))
 	return nil
 }
 
@@ -4296,6 +4329,7 @@ func autoConvert_api_VolumeSource_To_v1_VolumeSource(in *api.VolumeSource, out *
 	out.ConfigMap = (*ConfigMapVolumeSource)(unsafe.Pointer(in.ConfigMap))
 	out.VsphereVolume = (*VsphereVirtualDiskVolumeSource)(unsafe.Pointer(in.VsphereVolume))
 	out.AzureDisk = (*AzureDiskVolumeSource)(unsafe.Pointer(in.AzureDisk))
+	out.LibStorage = (*LibStorageVolumeSource)(unsafe.Pointer(in.LibStorage))
 	return nil
 }
 

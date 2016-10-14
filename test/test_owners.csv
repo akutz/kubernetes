@@ -823,6 +823,7 @@ k8s.io/kubernetes/pkg/volume/git_repo,davidopp,1
 k8s.io/kubernetes/pkg/volume/glusterfs,timstclair,1
 k8s.io/kubernetes/pkg/volume/host_path,jbeda,1
 k8s.io/kubernetes/pkg/volume/iscsi,cjcullen,1
+k8s.io/kubernetes/pkg/volume/libstorage,vladimirvivien,0
 k8s.io/kubernetes/pkg/volume/nfs,justinsb,1
 k8s.io/kubernetes/pkg/volume/quobyte,yujuhong,1
 k8s.io/kubernetes/pkg/volume/rbd,piosz,1
