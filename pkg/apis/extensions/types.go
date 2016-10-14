@@ -898,6 +898,7 @@ var (
 	VsphereVolume         FSType = "vsphereVolume"
 	Quobyte               FSType = "quobyte"
 	AzureDisk             FSType = "azureDisk"
+	LibStorage            FSType = "libStorage"
 	All                   FSType = "*"
 )
 
