@@ -28,7 +28,7 @@ import (
 	"strings"
 	"testing"
 
-	"k8s.io/kubernetes/pkg/volume/libstorage/lstypes"
+	"gopkg.in/akutz/kubernetes.v4/pkg/volume/libstorage/lstypes"
 )
 
 func tstSetupExec(t *testing.T) {
@@ -605,7 +605,7 @@ var jsonVolume = `
 var jsonAttachVolume = `
 {
   "attachToken":"token-000",
-  "volume":{ 
+  "volume":{
      "attachments": [
       {
         "deviceName": "",
@@ -634,7 +634,7 @@ var jsonVolumesDetached = `
     "id": "a63c7bf6-2231-40ab-929d-490e127326d9",
     "type": ""
   }
-}  
+}
 `
 
 var jsonVolumesAttached = `

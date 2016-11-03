@@ -19,7 +19,7 @@ package libstorage
 import (
 	"github.com/golang/glog"
 
-	"k8s.io/kubernetes/pkg/volume/libstorage/lstypes"
+	"gopkg.in/akutz/kubernetes.v4/pkg/volume/libstorage/lstypes"
 )
 
 type lsMgr interface {

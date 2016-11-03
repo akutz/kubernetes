@@ -25,7 +25,8 @@ import (
 	"k8s.io/kubernetes/pkg/types"
 	"k8s.io/kubernetes/pkg/util/mount"
 	"k8s.io/kubernetes/pkg/volume"
-	"k8s.io/kubernetes/pkg/volume/libstorage/lstypes"
+
+	"gopkg.in/akutz/kubernetes.v4/pkg/volume/libstorage/lstypes"
 )
 
 func createVolSpec(name string, readOnly bool) *volume.Spec {

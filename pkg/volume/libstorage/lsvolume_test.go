@@ -26,8 +26,9 @@ import (
 	"k8s.io/kubernetes/pkg/util/mount"
 	utiltesting "k8s.io/kubernetes/pkg/util/testing"
 	"k8s.io/kubernetes/pkg/volume"
-	"k8s.io/kubernetes/pkg/volume/libstorage/lstypes"
 	volumetest "k8s.io/kubernetes/pkg/volume/testing"
+
+	"gopkg.in/akutz/kubernetes.v4/pkg/volume/libstorage/lstypes"
 )
 
 func makePlugMgr(t *testing.T) (*volume.VolumePluginMgr, string) {
